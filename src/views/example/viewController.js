@@ -23,3 +23,4 @@ function ExampleController() {
         this.isSideBarOpen = !this.isSideBarOpen;
     };
 }
+
