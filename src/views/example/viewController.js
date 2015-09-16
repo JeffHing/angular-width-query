@@ -18,7 +18,7 @@ module.exports = ExampleController;
 //-------------------------------------
 
 function ExampleController() {
-    this.isSideBarOpen = true;
+    this.isSideBarOpen = false;
     this.toggleSideBar = function() {
         this.isSideBarOpen = !this.isSideBarOpen;
     };

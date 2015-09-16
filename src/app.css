@@ -5,3 +5,11 @@ body {
     margin: 0;
     box-sizing: border-box;
 }
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}

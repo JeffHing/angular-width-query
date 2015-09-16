@@ -1,7 +1,11 @@
-<div class="side-bar"
-     ng-class="{'side-bar-right': ctrl.isSideBarOpen}"></div>
+<div class="sidebar"
+     ng-class="{'sidebar-right': ctrl.isSideBarOpen}"></div>
 <div ng-class="{'container-right': ctrl.isSideBarOpen}"
      class="container" width-query>
+    <button class="sidebar-button"
+            ng-click="ctrl.toggleSideBar()">
+        Toggle Sidebar
+    </button>
     <div width-query-class="section">Section 1</div>
     <div width-query-class="section">Section 2</div>
     <div width-query-class="section">Section 3</div>
