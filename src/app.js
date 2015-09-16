@@ -22,6 +22,7 @@ angular.module('app', ['ui.router']);
 
 require('./app.css');
 require('width-query-directive')('app');
+require('./views/example/view.css');
 
 //-------------------------------------
 // Initialize routes
