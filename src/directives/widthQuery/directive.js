@@ -47,9 +47,9 @@ var MODEL = '_widthQueryDirective';
 // Exports
 //-------------------------------------
 
-module.exports = function(moduleName, config) {
+module.exports = function(moduleName, options) {
 
-    var defaultConfig = {
+    var config = {
         'class': null,
         directiveNames: {
             widthQuery: 'widthQuery',
@@ -66,18 +66,18 @@ module.exports = function(moduleName, config) {
         widthListener: null
     };
 
-    if (config) {
-        angular.merge(defaultConfig, config);
+    if (options) {
+        angular.merge(config, options);
     }
 
-    var directiveNames = defaultConfig.directiveNames;
+    var directiveNames = config.directiveNames;
 
     angular.module(moduleName).directive(directiveNames.widthQuery,
         function() {
-            return directive(defaultConfig);
+            return directive(config);
         });
 
-    widthQueryClass(moduleName, defaultConfig);
+    widthQueryClass(moduleName, config);
 };
 
 //-------------------------------------
@@ -90,21 +90,20 @@ Controller.$inject = ['$scope', '$element', '$attrs', '$window', '$timeout'];
  * @constructor
  */
 function Controller($scope, $element, $attrs, $window, $timeout,
-    defaultConfig) {
+    config) {
 
     var m = this[MODEL] = new ControllerModel($scope, $element,
-        $timeout, defaultConfig);
+        $timeout, config);
 
     // Parse attribute values.
-    var values = $attrs[defaultConfig.directiveNames.widthQuery];
+    var values = $attrs[config.directiveNames.widthQuery];
     if (values) {
         if (values[0] === '[') {
             var arr = $scope.$eval(values);
             m.config.class = arr[0];
             m.config.widthListener = arr[1];
         } else if (values[0] === '{') {
-            var config = $scope.$eval(values);
-            angular.extend(m.config, config);
+            angular.extend(m.config, $scope.$eval(values));
         } else {
             m.config.class = values;
         }
