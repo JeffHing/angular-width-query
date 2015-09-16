@@ -45,7 +45,7 @@ var loaders = {
 var library = {
 
     // GitHub project name.
-    projectName: 'width-query-directive',
+    projectName: 'angular-width-query',
 
     // Name of library variable for non-module build environments.
     variable: 'widthQueryDirective',

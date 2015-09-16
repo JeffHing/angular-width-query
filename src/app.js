@@ -21,7 +21,7 @@ angular.module('app', ['ui.router']);
 //-------------------------------------
 
 require('./app.css');
-require('width-query-directive')('app');
+require('angular-width-query')('app');
 require('./views/example/view.css');
 
 //-------------------------------------

@@ -1,8 +1,8 @@
 {
-  "name": "width-query-directive",
+  "name": "angular-width-query",
   "main": "./src/directives/widthQuery/directive.js",
   "version": "0.1.0",
-  "description": "A directive which applies a specific class to an element based upon the element's width.",
+  "description": "A set of directives which applies HTML classes to one or more elements based upon a container element's width",
   "keywords": [
     "angular",
     "directive",
@@ -10,7 +10,7 @@
     "media query",
     "element query"
   ],
-  "homepage": "https://github.com/JeffHing/width-query-directive",
+  "homepage": "https://github.com/JeffHing/angular-width-query",
   "license": "MIT",
   "author": {
     "name": "Jeffrey Hing",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JeffHing/width-query-directive.git"
+    "url": "https://github.com/JeffHing/angular-width-query.git"
   },
   "dependencies": {},
   "devDependencies": {
