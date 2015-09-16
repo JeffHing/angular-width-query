@@ -1,238 +1,160 @@
 <!-- Copyright 2015. Author: Jeffrey Hing. All Rights Reserved. MIT License -->
 
-# AngularCabinetUI
+# AngularWidthQuery
 
-AngularCabinetUI is a set of directives that simplifies the creation of 
-a variety of user interface components that share a simple trait: show
-or hide content when a trigger is invoked.
-Examples include accordions, menus, tabs, navigation sidebars, etc. 
+AngularWidthQuery is a set of directives which applies HTML classes to 
+one or more elements based upon a container element's width.
 
-By making it easy for you to create your own user interface components
-rather than use off-the-shelf components, you can easily adapt your 
-components (or create  new ones) to meet the demands of changing user 
-interface requirements. As such, AngularCabinetUI does not provide a UI 
-style, but rather provides the structure and behaviors needed to 
-implement a component. It's entirely up to you what CSS rules are 
-applied!
+It was created to support fluid layouts where the container element's width
+changes due to the user opening and closing other panels in the UI.
 
-AngularCabinetUI is modeled after the structure of a cabinet of drawers,
-which has the following properties:
+AngularWidthQuery is a substitue for using CSS media queries which only allow 
+CSS rules to be applied based upon the screen width, rather than an 
+element's width.
 
-* A cabinet contains one or more drawers.
-* A drawer contains content.
-* An open drawer shows the content. 
-* A closed drawer hides the content. 
-
-Applying CSS to this structure can emulate many existing user interface 
-components, and allows for the creation of many others.
 
 ## Table of Contents
 
 - [Features](#features)
 - [Installation](#installation)
 - [Example](#example)
-- [Provided Examples](#provided-examples)
 - [Usage](#usage)
     - [Factory Method](#factory-method)
-    - [Cabinet Directive](#cabinet-directive)
-    - [DrawerTrigger Directive](#drawertrigger-directive)
-    - [DrawerContents Directive](#drawercontents-directive)
-    - [DrawerClass Directive](#drawerclass-directive)
+    - [WidthQuery Directive](#widthQuery-directive)
+    - [WidtyQueryClass Directive](#widthQueryClass-directive)
    
 ## Features
 
-* Simplifies creation of user interface components that show or hide content.
-* Provides a consistent API across multiple user interface components.
-* Compatible with Angular 1.2.x and beyond.
+* Tiny implementation.
+* CSS transition and animation aware.
+* Customizable directive names.
 * Compatible with CommonJS, AMD, and non-module build environments.
 
 ## Installation
 
 To install the package:
 
-    npm install angular-cabinet-ui
+    npm install angular-width-query
     
 To require the package:    
 
 ```javascript
-var cabinetDirective = require("angular-cabinet-ui");
+var widthQueryDirective = require("angular-width-query");
 ```     
 
 ## Example
 
-The easist way to understand AngularCabinetUI is to walk 
-through a quick example of creating a "tabs" directive which allows the user 
-to select from a horizontal list of tabs.
-
-![alt tag](https://raw.githubusercontent.com/JeffHing/angular-cabinet-ui/master/readmeAssets/tabs.png)
+The easist way to understand AngularWidthQuery is to walk 
+through a quick example of creating a fluid layout consisting of 6 
+equally sized sections. At small width, the sections are stacked. 
+At medium width, the sections are arranged in two columns. At large width,
+the sections are arranged in three columns.
 
 ### 1. Add the Directives
 
-First, add the directives from AngularCabinetUI to an Angular module.
-The directive names should reflect the purpose of the user interface component.
-In this case, the  default directive names are renamed to use tab names:
+First, add the directives from AngularWidthQuery to an Angular module.
 
 ```javascript
-cabinetDirective('app', {
-    oneAlwaysOpen: true,
-
-    directiveNames: {
-        cabinet: 'tabs',
-        drawerTrigger: 'tabTrigger',
-        drawerContents: 'tabContents',
-        drawerClass: 'tabClass'
-    }
-});
+widthQueryDirective('app');
 ```    
 
 ### 2. Create the HTML Structure
 
-Next, create the HTML structure based upon the layout of the user 
-interface component and the demands of CSS.
-
-For tabs that appear at the top of the content, we need to specify the
-tabTrigger directives before the tabContents directives.
+Next, create the HTML structure for the container and the 6 sections.
+The values passed to the directives are the base HTML classes that will
+be automatically added to the elements.
 
 ```html
-<div tabs>
-    <a tab-trigger="0" href="">Tab 1</a>
-    <a tab-trigger="1" href="">Tab 2</a>
-    <a tab-trigger="2" href="">Tab 3</a>
-
-    <div tab-contents="0">
-        Lorem ipsum dolor sit amet...
-    </div>
-    <div tab-contents="1">
-        Duis aute irure dolor in...
-    </div>
-    <div tab-contents="2">
-        Sed ut perspiciatis unde...
-    </div>
+<div width-query="container">
+    <div width-query-class="section">Section 1</div>
+    <div width-query-class="section">Section 2</div>
+    <div width-query-class="section">Section 3</div>
+    <div width-query-class="section">Section 4</div>
+    <div width-query-class="section">Section 5</div>
+    <div width-query-class="section">Section 6</div>
 </div>
+
 ```
-
-The optional drawer ids associated with the directives allows the elements to 
-be moved around in any order but still maintain the correct relationship between
-trigger and content.
-
 ### 3. Create the CSS
 
-Lastly, create the CSS rules using the default class names. Every directive
-(except drawerClass) automatically adds a class to its element based upon the
-directive's name. For example, by default, the tabTrigger directive adds the 
-'tab-trigger' class to the element. When the tab is open, the directive adds 
-the 'tab-trigger-open' class to the element.
+Lastly, create the CSS rules.
 
 ```css
-.tab-trigger {
-    border-top: 1px solid #d0d0d0;
-    border-right: 1px solid #d0d0d0;
-    border-left: 1px solid #d0d0d0;
-    color: inherit;
-    cursor: pointer;
+.container {
+    font-size: 0;
+}
+
+.section {
+    border: 1px solid #c0c0c0;
     display: inline-block;
-    padding: 6px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    top: 1px;
-    width: 70px;
+    font-size: 1rem;
+    height: 300px;
 }
 
-.tab-trigger-open {
-    background-color: #f4f4f4;
+.section-large {
+    width: 33.33%;
 }
 
-.tab-contents {
-    background-color: #f4f4f4;
-    border: 1px solid #d0d0d0;
-    display: none;
-    padding: 10px;
+.section-medium {
+    width: 50%;
 }
 
-.tab-contents-open {
-    display: block;
-    left: 0;
+.section-small {
+    width: 100%;
 }
 ```
 
-That's it. You're done.
+That's it. You're done. 
 
-## Provided Examples
-
-Here are the examples that are available in
-[AngularCabinetUI's](https://github.com/JeffHing/angular-cabinet-ui) GitHub 
-project.
-
-### Accordion
-
-![alt tag](https://raw.githubusercontent.com/JeffHing/angular-cabinet-ui/master/readmeAssets/accordion.png)
-
-* [Directive](https://github.com/JeffHing/angular-cabinet-ui/tree/master/src/directives/examples/accordion)
-* [HTML](https://github.com/JeffHing/angular-cabinet-ui/tree/master/src/views/examples/accordion/view.html)
-
-### Menus
-
-![alt tag](https://raw.githubusercontent.com/JeffHing/angular-cabinet-ui/master/readmeAssets/menus.png)
-
-* [Directive](https://github.com/JeffHing/angular-cabinet-ui/tree/master/src/directives/examples/menus)
-* [HTML](https://github.com/JeffHing/angular-cabinet-ui/tree/master/src/views/examples/menus/view.html)
-
-### Sidebar
-
-![alt tag](https://raw.githubusercontent.com/JeffHing/angular-cabinet-ui/master/readmeAssets/sidebar.png)
-
-* [Directive](https://github.com/JeffHing/angular-cabinet-ui/tree/master/src/directives/examples/sidebar)
-* [HTML](https://github.com/JeffHing/angular-cabinet-ui/tree/master/src/views/examples/sidebar/view.html)
-
-### Tabs
-
-![alt tag](https://raw.githubusercontent.com/JeffHing/angular-cabinet-ui/master/readmeAssets/tabs.png)
-
-* [Directive](https://github.com/JeffHing/angular-cabinet-ui/tree/master/src/directives/examples/tabs)
-* [HTML](https://github.com/JeffHing/angular-cabinet-ui/tree/master/src/views/examples/tabs/view.html)
+Of course, the classes, and how they are applied, are fully customizable.
+See the Usage section below for the details.
 
 ## Usage
 
 ### Factory Method
 
-The `cabinetDirective()` factory method adds the AngularCabinetUI 
+The `widthQueryDirective()` factory method adds the AngularWidthQuery
 directives to an Angular module.
 
-To add the directives, call `cabinetDirective()` with
+To add the directives, call `widthQueryDirective()` with
 the name of the Angular module, and the options:
 
 ```javascript
-cabinetDirective('app', {
-    openOnHover: <boolean>,
-    oneAlwaysOpen: <boolean>,
-    allowMultipleOpen: <boolean>,
-    openStates: {
-        <string>: <boolean>
-    },
+widthQueryDirective('app', {
+    modifiers: [
+        [<string>, <number>, <number>],
+        ...
+    ],
+    pollingInterval: <milliseconds>
     directiveNames: {
-        cabinet: <string>,
-        drawerTrigger: <string>,
-        drawerContents: <string>,
-        drawerClass: <string>
-    }
-    directiveClasses: {
-        cabinet: <string>,
-        drawerTrigger: <string>,
-        drawerContents: <string>
+        widthQuery: <string>,
+        widthQueryClass: <string>
     }
 });
 ```
-#### Option Descriptions
 
-Option            | Description                                       | Default
------------------ | ------------------------------------------------- | -------
-openOnHover       | True to open the drawer when the mouse pointer hovers over the drawer trigger. | false
-oneAlwaysOpen     | True to ensure one drawer is always open. By default, it opens the first drawer on startup. | false
-allowMultipleOpen | True to allow multiple drawers to be open at the same time. | false
-openStates        | Allows you to specify which drawers to initally open. The key of the object is the drawer id, and the value is true. | {}
-directiveNames    | Allows you to rename the directives. The key of the object is the default directive name, and the value is the new directive name. | {}
-directiveClasses  | Allows you to choose the CSS classes assigned to the directives. The key of the object is the default directive name, and the value is the CSS class name. | {}
+#### Modifiers Option
+
+An array of HTML class modifiers to add to the base HTML class.
+
+Each element in the array is an array consisting of the HTML class modifier, 
+the lower width range, and the upper width range.
+
+AngularWidthQuery searches these ranges in-order to determine which class
+modifer to apply to the element's base HTML class.
+
+#### Polling Interval Option
+
+To address the issue of the width changing over time due to CSS animation and
+transitions, The widthQuery directive begins polling the container's width when
+a window resize or Angular digest event occurrs. When the width stops 
+changing, the polling stops. The interval at which the polling occurrs can 
+be adjusted using this option.
+
+#### Directive Names Option
+
+The names of the widthQuery and widthQueryClass directive can be changed to
+suit your needs.
 
 ### Cabinet Directive
 
