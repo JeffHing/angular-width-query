@@ -1,6 +1,23 @@
+.side-bar {
+    border: 1px solid #c0c0c0;
+    height: 100%;
+    left: -201px;
+    position: absolute;
+    width: 200px;
+}
+
+.side-bar-right {
+    left: 0;
+}
+
 .container {
     font-size: 0;
 }
+
+.container-right {
+    margin-left: 200px;
+}
+
 .section {
     border: 1px solid #c0c0c0;
     box-sizing: border-box;

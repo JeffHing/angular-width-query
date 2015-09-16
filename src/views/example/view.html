@@ -1,4 +1,7 @@
-<div class="container" width-query>
+<div class="side-bar"
+     ng-class="{'side-bar-right': ctrl.isSideBarOpen}"></div>
+<div ng-class="{'container-right': ctrl.isSideBarOpen}"
+     class="container" width-query>
     <div width-query-class="section">Section 1</div>
     <div width-query-class="section">Section 2</div>
     <div width-query-class="section">Section 3</div>

@@ -12,7 +12,7 @@
 //-------------------------------------
 
 require('angular');
-require('ui-router');
+require('angular-ui-router');
 
 angular.module('app', ['ui.router']);
 
@@ -35,6 +35,8 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('example', {
             url: '/',
-            template: require('./views/example/view.html')
+            controller: require('./views/example/viewController.js'),
+            template: require('./views/example/view.html'),
+            controllerAs: 'ctrl'
         });
 });
