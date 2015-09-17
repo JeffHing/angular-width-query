@@ -267,3 +267,22 @@ widthQueryDirective('app', {
     widthPollingListener: 'ctrl.widthChanging(width)'
 });
 ```
+
+### WidthQueryClass Directive
+
+The widthQueryClass directive updates the element's HTML class based upon the 
+state of its parent widthQuery directive.
+
+In the example below,
+if the widthQuery element has classes "container container-small", the 
+widthQueryClass element will have classes "section section-small".
+
+```html
+<div width-query="container">
+    <div width-query-class="section">...</div>
+    ...
+</div>
+```
+
+The widthQuery directive is passed the base HTML class to add to 
+the element.
