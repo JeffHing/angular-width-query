@@ -3,7 +3,8 @@
  *
  * MIT License.
  *
- * widthQuery directive.
+ * The widthQuery directive updates the element's HTML class based upon
+ * the element's width.
  *
  * @example
  * widthQueryDirective('app', {
