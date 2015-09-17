@@ -5,32 +5,39 @@
  * widthWatch directive.
  *
  * @example
+ * widthQueryDirective('app', {
+ *    directiveNames: {
+ *        widthQuery: 'widthQuery',
+ *        widthQueryClass: 'widthQueryClass'
+ *    },
+ *    modifiers: [
+ *        ['small', 0, 767],
+ *        ['medium', 768, 1023],
+ *        ['large', 1024, 100000]
+ *    ],
+ *    pollingInterval: 100
+ * });
  *
- * <div width-query="foobar">
- *     <div width-query-class="foobar">...<div>
- *     <div width-query-class="goobar">...<div>
+ * @example
+ *
+ * <div width-query="container">
+ *     <div width-query-class="section">...<div>
+ *     <div width-query-class="section">...<div>
  * </div>
  *
  * @example
  *
  * <div width-query="{
- *    class: 'foobar',
+ *    class: 'container',
  *    modifiers: [
  *        ['small', 0, 399],
  *        ['medium', 400, 1279],
  *        ['large', 1280, 100000]
  *    ],
- *    pollingInterval: 100
- *    widthPollingListener: 'ctrl.widthChanged(width)'
- *    widthListener: 'ctrl.widthChanged(width)'
+ *    pollingInterval: 100,
+ *    widthListener: 'ctrl.widthChanged(width)',
+ *    widthPollingListener: 'ctrl.widthChanging(width)'
  * }">
- *
- * @example
- *
- * <div width-query="['eoobar', 'ctrl.widthChanged(width)']">
- *     <div width-query-class="foobar">...<div>
- *     <div width-query-class="goobar">...<div>
- * </div>
  *
  */
 'use strict';
