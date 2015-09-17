@@ -179,6 +179,8 @@ widthQueryDirective('app', {
     pollingInterval: 100
 });
 ```
+If you have no animations or transitions, you can set this to 0.
+
 ### WidthQuery Directive
 
 The widthQuery directive updates the element's HTML class based upon the 
@@ -244,6 +246,8 @@ widthQueryDirective('app', {
     pollingInterval: 100
 });
 ```
+If you have no animations or transitions, you can set this to 0.
+
 #### 'widthListener' option
 
 This option allows you to specify a function to call when the width has
