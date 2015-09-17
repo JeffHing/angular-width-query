@@ -288,5 +288,5 @@ applied class "section-small" to its element.
 </div>
 ```
 
-The widthQuery directive is passed the base HTML class to add to 
+The widthQuery directive is passed the base HTML class to automatically add to 
 the element.
