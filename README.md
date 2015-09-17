@@ -44,7 +44,7 @@ var widthQueryDirective = require("angular-width-query");
 
 ## Example
 
-The easist way to understand AngularWidthQuery is to walk 
+The easiest way to understand AngularWidthQuery is to walk 
 through a quick example of creating a fluid layout consisting of 6 
 equally sized sections. At small width, the sections are stacked. 
 At medium width, the sections are arranged in two columns. At large width,
@@ -117,7 +117,7 @@ The `widthQueryDirective()` factory method adds the AngularWidthQuery
 directives to an Angular module.
 
 To add the directives, call `widthQueryDirective()` with
-the name of the Angular module, and the options:
+the name of the Angular module, and any options:
 
 ```javascript
 widthQueryDirective('app', {
@@ -132,7 +132,7 @@ widthQueryDirective('app', {
     pollingInterval: <milliseconds>
 });
 ```
-#### Directive Names Option
+#### 'directiveNames' option
 
 This option allows the names of the widthQuery and widthQueryClass directives
 to be changed to suit your needs.
@@ -146,7 +146,7 @@ widthQueryDirective('app', {
 });
 ```
 
-#### Modifiers Option
+#### 'modifiers' option
 
 This option allows you to specify which HTML class modifiers are added to the
 base HTML class.
@@ -167,11 +167,11 @@ widthQueryDirective('app', {
 });
 ```
 
-#### Polling Interval Option
+#### 'pollingInterval' option
 
 This option allows you to specify the interval at which the directive polls
 the element's width. The directive begins polling the element's width when
-a window resize or Angular digest event occurrs. When the width stops 
+a window resize event or Angular digest event occurrs. When the width stops 
 changing, the polling stops. 
 
 ```javascript
@@ -191,7 +191,7 @@ element's width.
 ```
 
 The widthQuery directive can be passed the base HTML class name, or a set of
-options:
+options. These options override any options passed to the factory method.
 
 ```html
 <div width-query="{
@@ -207,11 +207,11 @@ options:
 }">...</div>
 ```
 
-#### Class Option
+#### 'class' option
 
 This option specifies the base HTML class name to add to the element.
 
-#### Modifiers Option
+#### 'modifiers' option
 
 This option allows you to specify which HTML class modifiers are added to the
 base HTML class.
@@ -232,7 +232,7 @@ widthQueryDirective('app', {
 });
 ```
 
-#### Polling Interval Option
+#### 'pollingInterval' option
 
 This option allows you to specify the interval at which the directive polls
 the element's width. The directive begins polling the element's width when
@@ -244,7 +244,7 @@ widthQueryDirective('app', {
     pollingInterval: 100
 });
 ```
-#### Width Listener Option
+#### 'widthListener' option
 
 This option allows you to specify a function to call when the width has
 stopped changing. This is useful when you need to update the display of other
@@ -256,7 +256,7 @@ widthQueryDirective('app', {
 });
 ```
 
-#### Width Polling Listener Option
+#### 'widthPollingListener' option
 
 This option allows you to specify a function to call while the width is 
 changing. This is useful when you need to update the display of other
