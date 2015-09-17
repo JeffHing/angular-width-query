@@ -2,13 +2,13 @@
   "name": "angular-width-query",
   "main": "./src/directives/widthQuery/directive.js",
   "version": "0.1.0",
-  "description": "A set of directives which applies HTML classes to one or more elements based upon a container element's width",
+  "description": "A set of directives which applies HTML classes to elements based upon a container element's width.",
   "keywords": [
     "angular",
     "directive",
     "ui",
-    "media query",
-    "element query"
+    "media",
+    "query"
   ],
   "homepage": "https://github.com/JeffHing/angular-width-query",
   "license": "MIT",

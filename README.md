@@ -3,7 +3,7 @@
 # AngularWidthQuery
 
 AngularWidthQuery is a set of directives which applies HTML classes to 
-one or more elements based upon a container element's width.
+elements based upon a container element's width.
 
 It was created to support fluid layouts in situations where the container
 element's width changes due to the user opening and closing other panels in 
