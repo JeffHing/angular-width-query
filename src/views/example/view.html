@@ -1,7 +1,8 @@
 <div class="sidebar"
      ng-class="{'sidebar-right': ctrl.isSideBarOpen}"></div>
+
 <div ng-class="{'container-right': ctrl.isSideBarOpen}"
-     class="container" width-query>
+     width-query="container">
     <button class="sidebar-button"
             ng-click="ctrl.toggleSideBar()">
         Toggle Sidebar
