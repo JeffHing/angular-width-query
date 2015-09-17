@@ -1,21 +1,19 @@
 /*
  * Copyright 2015. Author: Jeffrey Hing. All Rights Reserved.
  *
- * widthQueryClass directive.
+ * MIT License
+ *
+ * The widthQueryClass directive adds the widthQuery directive's
+ * class modifier to the base HTML class of the element.
  *
  * @example
  *
- * <div width-query>
- *     <div width-query-class="foobar">...<div>
- *     <div width-query-class="goobar">...<div>
+ * <div width-query="container">
+ *     <div width-query-class="section">...<div>
+ *     <div width-query-class="section">...<div>
  * </div>
- *
  */
 'use strict';
-
-//-------------------------------------
-// Dependencies and variables
-//-------------------------------------
 
 //-------------------------------------
 // Exports
@@ -25,7 +23,7 @@ module.exports = function(moduleName, config) {
     angular.module(moduleName).directive(
         config.directiveNames.widthQueryClass,
         function() {
-            return directive(config);
+            return widthQueryClassDirective(config.directiveNames);
         });
 };
 
@@ -33,10 +31,10 @@ module.exports = function(moduleName, config) {
 // Directive
 //-------------------------------------
 
-function directive(config) {
+function widthQueryClassDirective(directiveNames) {
     return {
         link: function(scope, element, attrs, widthQueryCtrl) {
-            var className = attrs[config.directiveNames.widthQueryClass];
+            var className = attrs[directiveNames.widthQueryClass];
             var modifiedClass = null;
 
             // Add className to element.
@@ -59,6 +57,6 @@ function directive(config) {
                 element.addClass(modifiedClass);
             }
         },
-        require: '^' + config.directiveNames.widthQuery
+        require: '^' + directiveNames.widthQuery
     };
 }

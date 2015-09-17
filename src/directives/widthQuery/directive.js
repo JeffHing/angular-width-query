@@ -1,8 +1,9 @@
-
 /*
  * Copyright 2015. Author: Jeffrey Hing. All Rights Reserved.
  *
- * widthWatch directive.
+ * MIT License.
+ *
+ * widthQuery directive.
  *
  * @example
  * widthQueryDirective('app', {
@@ -46,7 +47,7 @@
 // Dependencies and variables
 //-------------------------------------
 
-var widthQueryClass = require('./widthQueryClass/directive');
+var widthQueryClassDirective = require('./widthQueryClass/directive');
 
 // Private model name.
 var MODEL = '_widthQueryDirective';
@@ -82,10 +83,10 @@ module.exports = function(moduleName, options) {
 
     angular.module(moduleName).directive(directiveNames.widthQuery,
         function() {
-            return directive(config);
+            return widthQueryDirective(config);
         });
 
-    widthQueryClass(moduleName, config);
+    widthQueryClassDirective(moduleName, config);
 };
 
 //-------------------------------------
@@ -141,7 +142,8 @@ var proto = Controller.prototype;
 
 /*
  * Add a listener to notify of class modifier changes.
- * Return the initial class modifier to use.
+ *
+ * @return {String} The initial class modifier to use.
  */
 proto.addModifierListener = function(listener) {
     var m = this[MODEL];
@@ -254,6 +256,8 @@ modelProto.startPolling = function() {
 
 /*
  * Return the class modifer based upon the width.
+ *
+ * @return {string} the class modifier
  */
 modelProto.calculateModifier = function(width) {
     var modifiers = this.config.modifiers;
@@ -306,8 +310,7 @@ modelProto.notifyWidthPollingListener = function(width) {
 // Directive
 //-------------------------------------
 
-
-function directive(config) {
+function widthQueryDirective(config) {
     ProxyController.$inject = ['$scope', '$element', '$attrs',
         '$window', '$timeout'
     ];

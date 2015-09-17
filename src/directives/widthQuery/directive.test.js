@@ -1,6 +1,8 @@
 /*
  * Copyright 2015. Author: Jeffrey Hing. All Rights Reserved.
  *
+ * MIT License
+ *
  * Unit tests for widthQuery directive.
  */
 'use strict';

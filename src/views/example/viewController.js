@@ -3,7 +3,7 @@
  *
  * MIT License
  *
- * Application entry point.
+ * Controller for example view.
  */
 'use strict';
 
