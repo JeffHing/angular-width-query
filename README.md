@@ -61,8 +61,6 @@ widthQueryDirective('app');
 ### 2. Create the HTML Structure
 
 Next, create the HTML structure for the container and the 6 sections.
-The values passed to the directives are the base HTML classes that will
-be initially added to the elements.
 
 ```html
 <div width-query="container">
@@ -73,8 +71,21 @@ be initially added to the elements.
     <div width-query-class="section">Section 5</div>
     <div width-query-class="section">Section 6</div>
 </div>
-
 ```
+
+The values passed to the directives are the base HTML classes that will
+be initially added to the elements.
+
+Based upon the current container element width, classes are dynamically 
+added to the elements to reflect the current width.
+
+For example, "container-small" and "section-small" will be added to their
+respective elements when the width of the container element is considered
+to be small.
+
+Of course, the width ranges and class modifiers are fully customizable.
+See the Usage section below for details.
+
 ### 3. Create the CSS
 
 Lastly, create the CSS rules.
@@ -105,9 +116,6 @@ Lastly, create the CSS rules.
 ```
 
 That's it. You're done. 
-
-Of course, the classes, and how they are applied, are fully customizable.
-See the Usage section below for the details.
 
 ## Usage
 
