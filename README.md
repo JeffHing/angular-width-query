@@ -156,14 +156,11 @@ widthQueryDirective('app', {
 
 #### 'modifiers' option
 
-This option allows you to specify which HTML class modifiers are added to the
+This option allows you to specify which class modifiers can be added to the
 base HTML class.
 
-Each item in the array is an array consisting of the HTML class modifier, 
+Each item in the array is an array consisting of the class modifier, 
 the lower width range, and the upper width range.
-
-The directive searches these ranges to determine which class
-modifer to apply to the element's base HTML class.
 
 ```javascript
 widthQueryDirective('app', {
@@ -179,7 +176,7 @@ widthQueryDirective('app', {
 
 This option allows you to specify the interval at which the directive polls
 the element's width. The directive begins polling the element's width when
-a window resize event or Angular digest event occurrs. When the width stops 
+a window resize event or Angular digest event occurs. When the width stops 
 changing, the polling stops. 
 
 ```javascript
@@ -223,14 +220,11 @@ This option specifies the base HTML class to initially add to the element.
 
 #### 'modifiers' option
 
-This option allows you to specify which HTML class modifiers are added to the
+This option allows you to specify which class modifiers can be added to the
 base HTML class.
 
-Each item in the array is an array consisting of the HTML class modifier, 
+Each item in the array is an array consisting of the class modifier, 
 the lower width range, and the upper width range.
-
-The directive searches these ranges to determine which class
-modifer to apply to the element's base HTML class.
 
 ```javascript
 widthQueryDirective('app', {
@@ -246,7 +240,7 @@ widthQueryDirective('app', {
 
 This option allows you to specify the interval at which the directive polls
 the element's width. The directive begins polling the element's width when
-a window resize or Angular digest event occurrs. When the width stops 
+a window resize or Angular digest event occurs. When the width stops 
 changing, the polling stops. 
 
 ```javascript
