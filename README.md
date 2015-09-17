@@ -271,11 +271,11 @@ widthQueryDirective('app', {
 ### WidthQueryClass Directive
 
 The widthQueryClass directive updates the element's HTML class based upon the 
-state of its parent widthQuery directive.
+state of the parent widthQuery directive.
 
-In the example below,
-if the widthQuery element has classes "container container-small", the 
-widthQueryClass element will have classes "section section-small".
+In the example below, if the widthQuery directive has applied class 
+"container-small" to its element, the widthQueryClass directive will have 
+applied class "section-small" to its element.
 
 ```html
 <div width-query="container">
