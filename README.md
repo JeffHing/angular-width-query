@@ -25,7 +25,7 @@ CSS rules based upon the screen width, rather than an element's width.
    
 ## Features
 
-* Tiny implementation.
+* 4K minified.
 * CSS transition and animation aware.
 * Customizable directive names.
 * Compatible with CommonJS, AMD, and non-module build environments.
