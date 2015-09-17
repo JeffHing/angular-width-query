@@ -62,7 +62,7 @@ widthQueryDirective('app');
 
 Next, create the HTML structure for the container and the 6 sections.
 The values passed to the directives are the base HTML classes that will
-be automatically added to the elements.
+be initially added to the elements.
 
 ```html
 <div width-query="container">
@@ -211,7 +211,7 @@ options. These options override the options passed to the factory method.
 
 #### 'class' option
 
-This option specifies the base HTML class to automatically add to the element.
+This option specifies the base HTML class to initially add to the element.
 
 #### 'modifiers' option
 
@@ -288,5 +288,5 @@ applied class "section-small" to its element.
 </div>
 ```
 
-The widthQuery directive is passed the base HTML class to automatically add to 
+The widthQuery directive is passed the base HTML class to initially add to 
 the element.
