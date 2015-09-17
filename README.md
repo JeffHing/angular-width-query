@@ -12,7 +12,6 @@ the UI.
 AngularWidthQuery is a substitute for CSS media queries which applies
 CSS rules based upon the screen width, rather than an element's width.
 
-
 ## Table of Contents
 
 - [Features](#features)
@@ -77,14 +76,12 @@ The values passed to the directives are the base HTML classes that will
 be initially added to the elements.
 
 Based upon the current container element width, classes are dynamically 
-added to the elements to reflect the current width.
+added to the elements to reflect the current width. For example, 
+"container-small" and "section-small" will be added to their respective 
+elements when the width of the container element is considered to be small.
 
-For example, "container-small" and "section-small" will be added to their
-respective elements when the width of the container element is considered
-to be small.
-
-Of course, the width ranges and class modifiers are fully customizable.
-See the Usage section below for details.
+The width ranges and class modifiers are fully customizable. See the Usage
+section below for details.
 
 ### 3. Create the CSS
 
@@ -208,8 +205,8 @@ options. These options override the options passed to the factory method.
         ['medium', 400, 1279],
         ['large', 1280, 100000]
     ],
-    pollingInterval: 100
-    widthPollingListener: 'ctrl.widthChanged(width)'
+    pollingInterval: 100,
+    widthPollingListener: 'ctrl.widthChanged(width)',
     widthListener: 'ctrl.widthChanged(width)'
 }">...</div>
 ```
