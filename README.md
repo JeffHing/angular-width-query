@@ -154,7 +154,7 @@ base HTML class.
 Each item in the array is an array consisting of the HTML class modifier, 
 the lower width range, and the upper width range.
 
-The widthQuery directive searches these ranges in-order to determine which class
+The directive searches these ranges to determine which class
 modifer to apply to the element's base HTML class.
 
 ```javascript
@@ -193,7 +193,7 @@ element's width.
 ```
 
 The widthQuery directive can be passed the base HTML class, or a set of
-options. These options override any options passed to the factory method.
+options. These options override the options passed to the factory method.
 
 ```html
 <div width-query="{
@@ -211,7 +211,7 @@ options. These options override any options passed to the factory method.
 
 #### 'class' option
 
-This option specifies the base HTML class to add to the element.
+This option specifies the base HTML class to automatically add to the element.
 
 #### 'modifiers' option
 
@@ -221,7 +221,7 @@ base HTML class.
 Each item in the array is an array consisting of the HTML class modifier, 
 the lower width range, and the upper width range.
 
-The widthQuery directive searches these ranges in-order to determine which class
+The directive searches these ranges to determine which class
 modifer to apply to the element's base HTML class.
 
 ```javascript
