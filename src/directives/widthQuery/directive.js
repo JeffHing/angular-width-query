@@ -7,6 +7,7 @@
  * the element's width.
  *
  * @example
+ *
  * widthQueryDirective('app', {
  *    directiveNames: {
  *        widthQuery: 'widthQuery',
