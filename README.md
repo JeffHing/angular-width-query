@@ -20,8 +20,8 @@ CSS rules based upon the screen width, rather than an element's width.
 - [Example](#example)
 - [Usage](#usage)
     - [Factory Method](#factory-method)
-    - [WidthQuery Directive](#widthQuery-directive)
-    - [WidtyQueryClass Directive](#widthQueryClass-directive)
+    - [WidthQuery Directive](#widthquery-directive)
+    - [WidthQueryClass Directive](#widthqueryclass-directive)
    
 ## Features
 
@@ -181,7 +181,7 @@ widthQueryDirective('app', {
 ```
 ### WidthQuery Directive
 
-The widthQuery directive modifies the element's base HTML class based upon the 
+The widthQuery directive updates the element's HTML class based upon the 
 element's width.
 
 ```html
@@ -190,7 +190,7 @@ element's width.
 </div>
 ```
 
-The widthQuery directive can be passed the base HTML class name, or a set of
+The widthQuery directive can be passed the base HTML class, or a set of
 options. These options override any options passed to the factory method.
 
 ```html
@@ -209,7 +209,7 @@ options. These options override any options passed to the factory method.
 
 #### 'class' option
 
-This option specifies the base HTML class name to add to the element.
+This option specifies the base HTML class to add to the element.
 
 #### 'modifiers' option
 
