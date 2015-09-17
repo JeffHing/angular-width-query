@@ -156,7 +156,7 @@ widthQueryDirective('app', {
 
 #### 'modifiers' option
 
-This option allows you to specify which class modifiers can be added to the
+This option allows you to specify the class modifiers that can be added to the
 base HTML class.
 
 Each item in the array is an array consisting of the class modifier, 
@@ -220,7 +220,7 @@ This option specifies the base HTML class to initially add to the element.
 
 #### 'modifiers' option
 
-This option allows you to specify which class modifiers can be added to the
+This option allows you to specify the class modifiers that can be added to the
 base HTML class.
 
 Each item in the array is an array consisting of the class modifier, 
