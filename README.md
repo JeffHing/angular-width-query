@@ -3,14 +3,13 @@
 # AngularWidthQuery
 
 AngularWidthQuery is a set of directives which applies HTML classes to 
-elements based upon a container element's width.
+elements based upon a container element's width. 
 
-It was created to support fluid layouts in situations where the container
-element's width changes due to the user opening and closing other panels in 
-the UI.
+It was created to support the fluid layout of a container's elements as its
+width changed due to the opening and closing of other panels in the UI.
 
-AngularWidthQuery is a substitute for CSS media queries which applies
-CSS rules based upon the screen width, rather than an element's width.
+It replaces the need for CSS media queries in situations where 
+the container element's width determines the layout, rather than the screen width.
 
 ## Table of Contents
 
@@ -89,11 +88,13 @@ Lastly, create the CSS rules.
 
 ```css
 .container {
+    box-sizing: border-box;
     font-size: 0;
 }
 
 .section {
     border: 1px solid #c0c0c0;
+    box-sizing: border-box;
     display: inline-block;
     font-size: 1rem;
     height: 300px;
