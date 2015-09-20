@@ -1,7 +1,7 @@
 {
   "name": "angular-width-query",
   "main": "./src/directives/widthQuery/directive.js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Applies HTML classes to elements based upon an element's width.",
   "keywords": [
     "angular",
