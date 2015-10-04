@@ -1,3 +1,6 @@
+### 0.1.3 (2016-10-04)
+* Fix README documentation.
+
 ### 0.1.2 (2016-09-20)
 * Package description and README update.
 
