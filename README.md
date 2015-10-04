@@ -216,6 +216,12 @@ options. These options override the options passed to the factory method.
 
 This option specifies the base HTML class to initially add to the element.
 
+```html
+<div width-query="{
+    class: 'container'
+}">...</div>
+```
+
 #### 'modifiers' option
 
 This option allows you to specify the class modifiers that can be added to the
@@ -224,14 +230,14 @@ base HTML class.
 Each item in the array is an array consisting of the class modifier, 
 the lower width range, and the upper width range.
 
-```javascript
-widthQueryDirective('app', {
+```html
+<div width-query="{
     modifiers: [
         ['small', 0, 767],
         ['medium', 768, 1023],
         ['large', 1024, 100000]
     ]
-});
+}">...</div>
 ```
 
 #### 'pollingInterval' option
@@ -241,10 +247,10 @@ the element's width. The directive begins polling the element's width when
 a window resize or Angular digest event occurs. When the width stops 
 changing, the polling stops. 
 
-```javascript
-widthQueryDirective('app', {
+```html
+<div width-query="{
     pollingInterval: 100
-});
+}">...</div>
 ```
 If you have no animations or transitions, you can set this to 0.
 
@@ -254,10 +260,10 @@ This option allows you to specify a function to call when the width has
 stopped changing. This is useful when you need to update the display of other
 elements when an animation or transition has completed.
 
-```javascript
-widthQueryDirective('app', {
+```html
+<div width-query="{
     widthListener: 'ctrl.widthChanged(width)'
-});
+}">...</div>
 ```
 
 #### 'widthPollingListener' option
@@ -266,10 +272,10 @@ This option allows you to specify a function to call while the width is
 changing. This is useful when you need to update the display of other
 elements during an animation or transition.
 
-```javascript
-widthQueryDirective('app', {
-    widthPollingListener: 'ctrl.widthChanging(width)'
-});
+```html
+<div width-query="{
+    widthPollingListener: 'ctrl.widthChanged(width)'
+}">...</div>
 ```
 
 ### WidthQueryClass Directive
